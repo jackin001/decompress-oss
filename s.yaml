@@ -44,7 +44,7 @@ services:
               - oss:ObjectCreated:PutSymlink
             filter:
               Key:
-                Prefix: src/
+                Prefix: /
                 Suffix: .tgz
             bucketName: weixinqs
         - name: untargz-oss-trigger
@@ -57,7 +57,7 @@ services:
               - oss:ObjectCreated:PutSymlink
             filter:
               Key:
-                Prefix: src/
+                Prefix: /
                 Suffix: .tar.gz
             bucketName: weixinqs
         - name: untarbz2-oss-trigger
@@ -70,7 +70,7 @@ services:
               - oss:ObjectCreated:PutSymlink
             filter:
               Key:
-                Prefix: src/
+                Prefix: /
                 Suffix: .tar.bz2
             bucketName: weixinqs
         - name: untarxz-oss-trigger
@@ -83,7 +83,7 @@ services:
               - oss:ObjectCreated:PutSymlink
             filter:
               Key:
-                Prefix: src/
+                Prefix: /
                 Suffix: .tar.xz
             bucketName: weixinqs
         - name: untar-oss-trigger
@@ -96,7 +96,7 @@ services:
               - oss:ObjectCreated:PutSymlink
             filter:
               Key:
-                Prefix: src/
+                Prefix: /
                 Suffix: .tar
             bucketName: weixinqs
   fc-zip-decompress-oss-invoke-fc:
@@ -139,7 +139,7 @@ services:
               - oss:ObjectCreated:PutSymlink
             filter:
               Key:
-                Prefix: src/
+                Prefix: /
                 Suffix: .zip
             bucketName: weixinqs
 
@@ -188,7 +188,7 @@ services:
               - oss:ObjectCreated:PutSymlink
             filter:
               Key:
-                Prefix: src/
+                Prefix: /
                 Suffix: .zip
             bucketName: weixinqs
         - name: gz-t
@@ -201,7 +201,7 @@ services:
               - oss:ObjectCreated:PutSymlink
             filter:
               Key:
-                Prefix: src/
+                Prefix: /
                 Suffix: .gz
             bucketName: weixinqs
         - name: tar-t
@@ -214,6 +214,6 @@ services:
               - oss:ObjectCreated:PutSymlink
             filter:
               Key:
-                Prefix: src/
+                Prefix: /
                 Suffix: .tar
             bucketName: weixinqs

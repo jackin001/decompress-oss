@@ -2,7 +2,7 @@ edition: 1.0.0
 name: transform_fun
 access: default
 vars:
-  region: cn-hangzhou
+  region: cn-shanghai
 services:
   fc-tar-decompress-oss-invoke-fc:
     component: devsapp/fc
@@ -21,7 +21,7 @@ services:
                 Action:
                   - oss:GetObject
                   - oss:PutObject
-                Resource: acs:oss:*:*:your-bucket/*
+                Resource: acs:oss:*:*:weixinqs/*
         internetAccess: true
         #logConfig: auto
       function:
@@ -46,7 +46,7 @@ services:
               Key:
                 Prefix: src/
                 Suffix: .tgz
-            bucketName: your-bucket
+            bucketName: weixinqs
         - name: untargz-oss-trigger
           type: oss
           config:
@@ -59,7 +59,7 @@ services:
               Key:
                 Prefix: src/
                 Suffix: .tar.gz
-            bucketName: your-bucket
+            bucketName: weixinqs
         - name: untarbz2-oss-trigger
           type: oss
           config:
@@ -72,7 +72,7 @@ services:
               Key:
                 Prefix: src/
                 Suffix: .tar.bz2
-            bucketName: your-bucket
+            bucketName: weixinqs
         - name: untarxz-oss-trigger
           type: oss
           config:
@@ -85,7 +85,7 @@ services:
               Key:
                 Prefix: src/
                 Suffix: .tar.xz
-            bucketName: your-bucket
+            bucketName: weixinqs
         - name: untar-oss-trigger
           type: oss
           config:
@@ -98,7 +98,7 @@ services:
               Key:
                 Prefix: src/
                 Suffix: .tar
-            bucketName: your-bucket
+            bucketName: weixinqs
   fc-zip-decompress-oss-invoke-fc:
     component: devsapp/fc
     props:
@@ -116,7 +116,7 @@ services:
                 Action:
                   - oss:GetObject
                   - oss:PutObject
-                Resource: acs:oss:*:*:your-bucket/*
+                Resource: acs:oss:*:*:weixinqs/*
         internetAccess: true
         #logConfig: auto
       function:
@@ -141,7 +141,7 @@ services:
               Key:
                 Prefix: src/
                 Suffix: .zip
-            bucketName: your-bucket
+            bucketName: weixinqs
 
   # 使用性能型实例, 内存最大可以调整到 32G, 执行时长可以到 2h
   # 这个函数解压方法很简洁， 直接将 oss 的待解压文件读到内存， 解压后， 串行上传回 OSS
@@ -164,7 +164,7 @@ services:
                 Action:
                   - oss:GetObject
                   - oss:PutObject
-                Resource: acs:oss:*:*:your-bucket/*
+                Resource: acs:oss:*:*:weixinqs/*
         internetAccess: true
         #logConfig: auto
       function:
@@ -190,7 +190,7 @@ services:
               Key:
                 Prefix: src/
                 Suffix: .zip
-            bucketName: your-bucket
+            bucketName: weixinqs
         - name: gz-t
           type: oss
           config:
@@ -203,7 +203,7 @@ services:
               Key:
                 Prefix: src/
                 Suffix: .gz
-            bucketName: your-bucket
+            bucketName: weixinqs
         - name: tar-t
           type: oss
           config:
@@ -216,4 +216,4 @@ services:
               Key:
                 Prefix: src/
                 Suffix: .tar
-            bucketName: your-bucket
+            bucketName: weixinqs

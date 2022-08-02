@@ -26,6 +26,7 @@ services:
       triggers:
         - name: untgz-oss-trigger
           type: oss
+          role: "acs:ram::1667759545658358:role/aliyunfcserverlessdevsrole"
           config:
             events:
               - oss:ObjectCreated:PutObject
@@ -39,6 +40,7 @@ services:
             bucketName: "weixinqs"
         - name: untargz-oss-trigger
           type: oss
+          role: "acs:ram::1667759545658358:role/aliyunfcserverlessdevsrole"
           config:
             events:
               - oss:ObjectCreated:PutObject
@@ -52,6 +54,7 @@ services:
             bucketName: "weixinqs"
         - name: untarbz2-oss-trigger
           type: oss
+          role: "acs:ram::1667759545658358:role/aliyunfcserverlessdevsrole"
           config:
             events:
               - oss:ObjectCreated:PutObject
@@ -65,6 +68,7 @@ services:
             bucketName: "weixinqs"
         - name: untarxz-oss-trigger
           type: oss
+          role: "acs:ram::1667759545658358:role/aliyunfcserverlessdevsrole"
           config:
             events:
               - oss:ObjectCreated:PutObject
@@ -78,6 +82,7 @@ services:
             bucketName: "weixinqs"
         - name: untar-oss-trigger
           type: oss
+          role: "acs:ram::1667759545658358:role/aliyunfcserverlessdevsrole"
           config:
             events:
               - oss:ObjectCreated:PutObject
@@ -111,6 +116,7 @@ services:
       triggers:
         - name: unzip-oss-trigger
           type: oss
+          role: "acs:ram::1667759545658358:role/aliyunfcserverlessdevsrole"
           config:
             events:
               - oss:ObjectCreated:PutObject
